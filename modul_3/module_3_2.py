@@ -1,5 +1,5 @@
 def send_email(message, recipient, *, sender="university.help@gmail.com"):
-    def sh_email(string):
+    def check_email(string):
         if string.count('@') != 1:
             return False
         dom = string.split('@')[1]
@@ -7,7 +7,7 @@ def send_email(message, recipient, *, sender="university.help@gmail.com"):
             return False
         return True
 
-    if not sh_email(recipient) or not sh_email(sender):
+    if not check_email(recipient) or not check_email(sender):
         print(f'Невозможно отправить письмо с адреса {sender} на адрес {recipient}')
     elif recipient == sender:
         print('Нельзя отправить письмо самому себе!')
