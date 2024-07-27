@@ -1,5 +1,14 @@
-def calculate_structure_sum(data):
-    pass
+def calculate_structure_sum(n):
+    s = 0
+    for el in n:
+        if isinstance(el, dict):
+            el = calculate_structure_sum(el.items())
+        if isinstance(el, (list, tuple, set)):
+            el = calculate_structure_sum(el)
+        if isinstance(el, str):
+            el = len(el)
+        s += el
+    return s
 
 
 data_structure = [
