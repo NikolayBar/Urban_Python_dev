@@ -7,6 +7,7 @@ def get_password(in_num: int) -> str:
     return res
 
 
-# n = int(input())
-# result = get_password(n)
-# print(result)
+if __name__ == '__main__':
+    n = int(input())
+    result = get_password(n)
+    print(result)
