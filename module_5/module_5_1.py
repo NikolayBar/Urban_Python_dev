@@ -11,6 +11,8 @@ class House:
         for lv in range(1, floor + 1):
             print(lv)
 
+        return None
+
 
 h1 = House('ЖК Горский', 18)
 h2 = House('Домик в деревне', 2)
