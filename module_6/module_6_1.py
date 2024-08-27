@@ -14,9 +14,10 @@ class Animal:
 
 
 class Plant:
+    edible = None
+
     def __init__(self, name):
         self.name = name
-        self.edible = self.edible
 
 
 class Mammal(Animal):
