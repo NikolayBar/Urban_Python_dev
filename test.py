@@ -1,20 +1,22 @@
-from module_6.module_6_2 import *
+from module_6.module_6_hard import *
 
-# Текущие цвета __COLOR_VARIANTS = ['blue', 'red', 'green', 'black', 'white']
-vehicle1 = Sedan('Fedos', 'Toyota Mark II', 'blue', 500)
+circle1 = Circle((200, 200, 100), 10)  # (Цвет, стороны)
+cube1 = Cube((222, 35, 130), 6)
 
-# Изначальные свойства
-vehicle1.print_info()
+# Проверка на изменение цветов:
+circle1.set_color(55, 66, 77)  # Изменится
+print(f'{circle1.get_color()=}')
+cube1.set_color(300, 70, 15)  # Не изменится
+print(f'{cube1.get_color()=} | [222, 35, 130]')
 
-# Меняем свойства (в т.ч. вызывая методы)
-vehicle1.set_color('Pink')
-vehicle1.set_color('BLACK')
-vehicle1.owner = 'Vasyok'
+# Проверка на изменение сторон:
+cube1.set_sides(5, 3, 12, 4, 5)  # Не изменится
+print(f'{cube1.get_sides()=} | [6, 6, ..., 6]')  # [6, 6, ..., 6]
+circle1.set_sides(15)  # Изменится
+print(f'{circle1.get_sides()=}')
 
-# Проверяем что поменялось
-vehicle1.print_info()
+# Проверка периметра (круга), это и есть длина:
+print(f'{len(circle1)=}')
 
-print('-' * 30)
-sedan = Sedan('Fedya', 'Vas 2109', 'red', 250)
-sedan.print_info()
-
+# Проверка объёма (куба):
+print(f'{cube1.get_volume()=}')
