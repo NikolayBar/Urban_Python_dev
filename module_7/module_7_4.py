@@ -1,15 +1,13 @@
-from random import seed, randint as rd, uniform as uf
-
-seed(12)
+from random import seed, randint as rd, uniform as uf, choice as ch
 
 
 class Team:
 
-    def __init__(self, name: str, team_members: int, time: float):
+    def __init__(self, name: str, team_members: int, tasks: list, time: float):
         self.name = name
         self.team_members = team_members
         self.time = time
-        self.tasks = [rd(0, 3) for _ in range(50)]
+        self.tasks = tasks
         self.solved_task = len([x for x in self.tasks if x != 0])
         self.score = sum(self.tasks)
 
@@ -64,14 +62,17 @@ class Results:
 
 
 if __name__ == '__main__':
+    seed(11)
 
     team1_num = 5
     team2_num = 6
+    team1_tasks = [ch((0, 1, 1, 1)) for _ in range(50)]
+    team2_tasks = [ch((0, 1, 1, 1)) for _ in range(50)]
     team1_time = round(uf(1500, 2500), 3)
     team2_time = round(uf(1500, 2500), 3)
 
-    team_1 = Team('"Мастера кода"', team1_num, team1_time)
-    team_2 = Team('"Волшебники данных"', team2_num, team2_time)
+    team_1 = Team('"Мастера кода"', team1_num, team1_tasks, team1_time)
+    team_2 = Team('"Волшебники данных"', team2_num, team2_tasks, team2_time)
 
     res = Results(team_1, team_2)
 
