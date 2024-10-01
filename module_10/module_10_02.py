@@ -22,7 +22,7 @@ class Knight(Thread):
         print(f'{self.name} одержал победу спустя {days} дней(дня)!')
 
 
-knights = [Knight('Sir Lancelot', 10),
+knights = [Knight('Sir Lancelot', 5),
            Knight("Sir Galahad", 20)]
 
 for obj in knights:
