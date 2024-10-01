@@ -16,12 +16,3 @@
 #
 #
 # scan_dir(path)
-
-numbers_list = [1, 1, 2, 2, 3, 3, 4, 4]
-
-numbers_list_ordered = sorted(numbers_list, reverse=True)
-numbers_set = set(numbers_list)
-numbers_set.add(max(numbers_list) + 1)
-_list = sorted(set(numbers_list))
-numbers_frozenset = frozenset(_list[1:])
-print(numbers_frozenset)
