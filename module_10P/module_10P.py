@@ -26,3 +26,5 @@ for thread in threads:
     thread.join()
 
 print(*Getter.res, sep='\n')
+
+assert len(Getter.res) == num_of_genres - 1, f'{len(Getter.res)} genres returned!'
