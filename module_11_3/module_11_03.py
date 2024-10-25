@@ -1,5 +1,6 @@
 import inspect
-from module_11 import exsample_11_03
+import exsample_11_03
+
 
 def get_signature(obj):
     try:
